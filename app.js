@@ -25,7 +25,7 @@ const sampleData = {
 async function fun(endPoints, numOfConcurency) {
   try {
     const limit = pLimit(numOfConcurency);
-    const requests = endpoints.map((account) =>
+    const requests = endPoints.map((account) =>
       limit(() => instance.get(account))
     );
     const responses = await Promise.all(requests);
